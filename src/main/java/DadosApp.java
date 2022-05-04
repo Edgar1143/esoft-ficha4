@@ -8,10 +8,16 @@ public class DadosApp {
     private LinkedList<Transacao> transacoes;
 
     private DadosApp(){
-        conta = new Conta(transacoes);
+        conta = new Conta();
+        conta.adicionarDespesa(1000, "Iphone");
+        conta.adicionarRecebimento(5000, "Ordenado");
     }
 
-    public static DadosApp getDados(){
+    public static DadosApp getInstancia(){
         return instancia;
+    }
+
+    public Conta getConta() {
+        return conta;
     }
 }

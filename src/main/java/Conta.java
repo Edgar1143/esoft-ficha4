@@ -3,8 +3,8 @@ import java.util.LinkedList;
 public class Conta {
     private LinkedList<Transacao> transacoes;
 
-    public Conta(LinkedList<Transacao> transacoes) {
-        this.transacoes = transacoes;
+    public Conta() {
+        this.transacoes = new LinkedList<>();
     }
 
     public LinkedList<Transacao> getTransacoes() {
@@ -27,7 +27,7 @@ public class Conta {
 
 
     //requisito 9
-    public double verSaldo(){
+    public double getSaldo(){
         double saldo = 0;
         for (Transacao transacao: transacoes) {
             if(transacao.isDespesa()){
