@@ -5,7 +5,7 @@ public class JanelaPrincipal extends JFrame {
     private JPanel panel1;
     private JButton sairButton;
     private JButton fazerUmRegistoButton;
-    private JButton visualizarOHistóricoButton;
+    private JButton historicoButton;
     private JTextField textSaldo;
 
 
@@ -17,6 +17,13 @@ public class JanelaPrincipal extends JFrame {
         mostrarSaldo();
 
         sairButton.addActionListener(this::buttonSairActionPerformed);
+        historicoButton.addActionListener(this::buttonHistoricoActionPerformed);
+    }
+
+    private void buttonHistoricoActionPerformed(ActionEvent event) {
+        DadosApp da = DadosApp.getInstancia();
+        var janela = new JanelaDeHistorico(da.getConta().getTransacoes());
+        janela.setVisible(true);
     }
 
     private void buttonSairActionPerformed(ActionEvent event) {
